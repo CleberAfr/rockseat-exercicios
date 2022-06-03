@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--<head>-->
-
+    <%-include('../partials/head'); %>
 <!--</head>-->
 <body class="container">
     <!--<header>-->
-    
+        <%-include('../partials/header', {pagina: 'Home'}); %>
     <!--</header>-->
     <main>
         <div class="jumbotron">
@@ -13,13 +13,16 @@
             <p>Vamos Aprender a trabalhar com arquivos JS</p>
         </div>
         <ul>
-            <li>
-                <strong>D</quality></strong> esenvolver aplicações/serviços de forma facil
-            </li>
+            <% qualitys.forEach(function(quality) { %>
+                <li>
+                    <strong> <%= quality.title %> </strong> <%= quality.message %>
+                </li>
+            <% }) %>
+            
         </ul>
     </main>
     <!--<footer>-->
-    
+        <%-include('../partials/footer'); %>
     <!--</footer>-->
 </body>
 </html>
